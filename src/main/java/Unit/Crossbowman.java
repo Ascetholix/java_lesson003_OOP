@@ -3,23 +3,21 @@ package Unit;
  * Арбалетчик
  */
 public class Crossbowman extends Shooter{
-    private int shots;
-
-
-    public Crossbowman(int hp, int damage, int def, float dist, int pin, String name,int shots) {
-        super(hp, damage, def, dist, name);
-        this.shots = shots;
+    public Crossbowman(int attack, int def, int damage, int maxHp, int speed, int shot, int maxDamade, String name) {
+        super(attack, def, damage, maxHp, speed, shot, maxDamade, name);
     }
 
     public Crossbowman(String name) {
-        super(100, 10, 5, 5, name);
-        this.shots = 10;
+        super(6, 3, 2, 10, 4, 16,3, name);
 
     }
 
     @Override
     public String getInfo() {
-        return String.format("Имя: %s  Hp: %d Урон: %d Защита: %d Стрелы: %d Дистанция: %f Type: %s",
-                this.name, this.hp, this.damage, this.def, this.shots, this.dist, this.getClass().getSimpleName());
+        return String.format("Имя: %9s Атака: %2d Урон: %2d-%d Hp: %3d Защита: %2d Скорость %2d Выстрелы: %2d Арбачетчик",
+                this.name, this.attack, this.damage, this.maxDamage, this.maxHp, this.def, this.speed, this.shot);
     }
+
+
+
 }

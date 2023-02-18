@@ -3,11 +3,13 @@ package Unit;
  * Абстрактный класс Черодей
  */
 public abstract class Sorcerer extends Person{
-     int mana;
+     int magic;
      String name;
-    public Sorcerer(int hp, int damage, int def,int mana, String name) {
-        super(hp, damage, def);
-        this.mana = mana;
+
+    public Sorcerer(int attack, int def, int damage, int maxHp, int speed, int magic, String name) {
+        super(attack, def, damage, maxHp, speed);
+        this.magic = magic;
         this.name = name;
     }
+
 }

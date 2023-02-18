@@ -5,20 +5,20 @@ package Unit;
  */
 public class Mag extends Sorcerer {
 
-    int curse;
-    public Mag(int hp, int damage, int def, int mana, String name, int curse) {
-        super(hp, damage, def, mana, name);
-        this.curse = curse;
+    public Mag(int attack, int def, int damage, int maxHp, int speed, int magic, String name) {
+        super(attack, def, damage, maxHp, speed, magic, name);
     }
 
     public Mag(String name) {
-        super(100, 1, 2, 50, name);
-        this.curse = 10;
+        super(17, 12, -5, 30, 9, 1, name);
+
     }
 
     @Override
     public String getInfo() {
-        return String.format("Имя: %s  Hp: %d Урон: %d Защита: %d Проклятие: %d Мана: %d Type: %s",
-                this.name, this.hp, this.damage, this.def, this.curse, this.mana, this.getClass().getSimpleName());
+        return String.format("Имя: %9s Атака: %2d Урон: %3d Hp: %3d Защита: %2d Скорость %2d Магия: %2d Колдун",
+                this.name, this.attack, this.damage, this.maxHp, this.def, this.speed, this.magic);
     }
+
+
 }

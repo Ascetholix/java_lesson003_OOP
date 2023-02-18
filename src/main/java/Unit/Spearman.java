@@ -4,26 +4,27 @@ package Unit;
  * Копейщик
  */
 public class Spearman extends Person {
-    int spearLength; // длина копья
-    int impactForce; // сила удара
+    int maxDamage;
     String name;
-    public Spearman(int hp, int damage, int def,int spearLength, int impactForce, String name) {
-        super(hp, damage, def);
-        this.spearLength = spearLength;
-        this.impactForce = impactForce;
+
+    public Spearman(int attack, int def, int damage, int maxHp, int speed, int maxDamage, String name) {
+        super(attack, def, damage, maxHp, speed);
+        this.maxDamage = maxDamage;
         this.name = name;
     }
 
     public Spearman(String name) {
-        super(100, 10, 10);
+        super(4, 5, 1, 10, 4);
+        this.maxDamage = 3;
         this.name = name;
-        this.impactForce = 5;
-        this.spearLength = 4;
     }
 
     @Override
     public String getInfo() {
-        return String.format("Имя: %s  Hp: %d Урон: %d Защита: %d Длина копья: %d Сила удара: %d Type: %s",
-                this.name, this.hp, this.damage, this.def, this.spearLength, this.impactForce, this.getClass().getSimpleName());
+        return String.format("Имя: %9s Атака: %2d Урон: %2d-%d Hp: %3d Защита: %2d Скорость %2d Копейщик",
+                this.name, this.attack, this.damage, this.maxDamage, this.maxHp, this.def,  this.speed);
     }
+
+
+
 }

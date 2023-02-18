@@ -5,21 +5,20 @@ package Unit;
  */
 public class Monk extends Sorcerer {
 
-    int treatment;
-
-    public Monk(int hp, int damage, int def, int mana, String name, int treatment) {
-        super(hp, damage, def, mana, name);
-        this.treatment = treatment;
+    public Monk(int attack, int def, int damage, int maxHp, int speed, int magic, String name) {
+        super(attack, def, damage, maxHp, speed, magic, name);
     }
 
     public Monk(String name) {
-        super(100, 1, 2, 50, name);
-        this.treatment = 10;
+        super(12, 7, -4, 30, 5, 1, name);
+
     }
 
     @Override
     public String getInfo() {
-        return String.format("Имя: %s  Hp: %d Урон: %d Защита: %d Лечение: %d Мана: %d Type: %s",
-                this.name, this.hp, this.damage, this.def, this.treatment, this.mana, this.getClass().getSimpleName());
+        return String.format("Имя: %9s Атака: %2d Урон: %3d Hp: %3d Защита: %2d Скорость %2d Магия: %d2 Монах",
+                this.name, this.attack, this.damage, this.maxHp, this.def, this.speed, this.magic);
     }
+
+
 }

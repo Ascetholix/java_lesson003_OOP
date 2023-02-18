@@ -5,26 +5,25 @@ package Unit;
  */
 public class Outlaw extends Person {
 
-    int stealth; // невидемость
-    int theft; // кража
+    int maxDamage;
     String name;
-    public Outlaw(int hp, int damage, int def,int stealth, int theft, String name) {
-        super(hp, damage, def);
-        this.stealth = stealth;
-        this.theft = theft;
+
+    public Outlaw(int attack, int def, int damage, int maxHp, int speed, int maxDamage, String name) {
+        super(attack, def, damage, maxHp, speed);
+        this.maxDamage = maxDamage;
         this.name = name;
     }
 
     public Outlaw(String name) {
-        super(100, 20, 5);
-        this.stealth = 10;
-        this.theft = 5;
+        super(8, 3, 2, 10, 6);
+        this.maxDamage = 4;
         this.name = name;
     }
 
     @Override
     public String getInfo() {
-        return String.format("Имя: %s  Hp: %d Урон: %d Защита: %d Невидемость: %d Кража: %d Type: %s",
-                this.name, this.hp, this.damage, this.def, this.stealth, this.theft, this.getClass().getSimpleName());
+        return String.format("Имя: %9s Атака: %2d Урон: %d-%d Hp: %3d Защита: %2d Скорость %2d Разбойник",
+                this.name, this.attack, this.damage, this.maxDamage, this.maxHp, this.def,  this.speed);
     }
+
 }
